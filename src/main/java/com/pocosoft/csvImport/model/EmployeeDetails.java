@@ -1,6 +1,9 @@
 package com.pocosoft.csvImport.model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 import com.opencsv.bean.CsvBindAndJoinByName;
 import com.opencsv.bean.CsvBindByName;
@@ -9,6 +12,8 @@ import com.opencsv.bean.CsvBindByName;
 @Entity
 public class EmployeeDetails {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
 	@CsvBindByName
 	private String name;
